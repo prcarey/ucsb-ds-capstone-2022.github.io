@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using Images for Recommendation &#8212; Data Science Capstone 2022</title>
+    <title>Implementing Hybrid Models and Image Features &#8212; Data Science Capstone 2022</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -249,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Using Images for Recommendation
+     Implementing Hybrid Models and Image Features
     </a>
    </li>
   </ul>
@@ -609,9 +609,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Using Images for Recommendation
+   Implementing Hybrid Models and Image Features
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concise-refresher">
+     Concise Refresher
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-images-for-recommendation">
+     Using Images for Recommendation
+    </a>
+   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#image-preprocessing">
      Image Preprocessing
@@ -686,7 +696,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Using Images for Recommendation</h1>
+                <h1>Implementing Hybrid Models and Image Features</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -698,9 +708,19 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Using Images for Recommendation
+   Implementing Hybrid Models and Image Features
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concise-refresher">
+     Concise Refresher
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-images-for-recommendation">
+     Using Images for Recommendation
+    </a>
+   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#image-preprocessing">
      Image Preprocessing
@@ -774,9 +794,17 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="using-images-for-recommendation">
-<h1>Using Images for Recommendation<a class="headerlink" href="#using-images-for-recommendation" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="implementing-hybrid-models-and-image-features">
+<h1>Implementing Hybrid Models and Image Features<a class="headerlink" href="#implementing-hybrid-models-and-image-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concise-refresher">
+<h2>Concise Refresher<a class="headerlink" href="#concise-refresher" title="Permalink to this headline">¶</a></h2>
+<p>At the end of last quarter, we successfully implemented constrained adaptive priors to our Bilateral Variational Autoencoder (BiVaE) model and worked with the AppFolio CS Capstone team to deploy it onto their website. We are continuing our work to implement more features into our models in hopes of improving our recommendation accuracy.</p>
+<p>Additionally, we’d like to transition to exploring other models for recommendation as opposed to just focusing on the BiVaE model. We hope to improve our ranking metrics further as well as the efficiency of our inference.</p>
+</div>
+<div class="section" id="using-images-for-recommendation">
+<h2>Using Images for Recommendation<a class="headerlink" href="#using-images-for-recommendation" title="Permalink to this headline">¶</a></h2>
 <p>Images have been shown to have vast predictive power for various tasks. When broken down, images are a 2D array of pixels, with each pixel consisting of 3 color channels (Red, Green, and Blue). Within that set of pixels lie plenty of datapoints. Let’s say an image in our data set has dimensions of 384 x 512 x 3. That yields nearly 600,000 data points in just one image. Clearly each pixel’s value does not hold the same predictive standing as an individual feature of the model, but the ensemble of pixels can open up patterns in a user’s image preferences that are difficult for humans to detect. For example, a user may have a predilection towards properties with green lawns out in front. Or perhaps user’s are drawn to photos with more vibrant color contrasts. Either way, a user’s interaction with images can be valuable in determining their preferences, and since we are lucky enough to have images associated with a majority of our properties, we hope to harness the influence that they have to offer.</p>
+</div>
 <div class="section" id="image-preprocessing">
 <h2>Image Preprocessing<a class="headerlink" href="#image-preprocessing" title="Permalink to this headline">¶</a></h2>
 <p>Working with images requires various techniques of preprocessing before being used as input to a model. We had to spend some time researching how we can utilize the information stored in images and put it into our model.</p>
